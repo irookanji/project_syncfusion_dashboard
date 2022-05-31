@@ -28,11 +28,11 @@ import { useStateContext } from "./contexts/ContextProvider";
 import "./App.css";
 
 const App = () => {
-  const { activeMenu, themeSettings, setThemeSettings, currentColor } =
+  const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } =
     useStateContext();
 
   return (
-    <div>
+    <div className={currentMode === 'Dark' ? 'dark': ''}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
